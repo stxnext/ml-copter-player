@@ -38,7 +38,7 @@ vehicle model.
 
 1. Clone the repository:
 
-        git clone git@git.stxnext.pl:Hackathon/ml-copter-player.git
+        git clone git@github.com:stxnext/ml-copter-player.git
         cd ./ml-copter-player
 
 1. Create python virtual environment (assuming python interpreter accessible with alias `python3.6`):
