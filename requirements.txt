@@ -1,0 +1,10 @@
+aiohttp
+aiohttp-jinja2
+motor==1.3.0
+pandas
+sklearn
+sklearn_pandas
+keras
+tensorflow
+h5py
+pyperclip

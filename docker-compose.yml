@@ -1,0 +1,35 @@
+
+version: '2'
+
+services:
+
+  game:
+    build:
+      context: .
+      dockerfile: game.Dockerfile
+      args:
+        USER_ID: $USER_ID
+    stdin_open: true
+    tty: true
+    environment:
+      DOCKER_ENVIRONMENT: 'True'
+    volumes:
+      - .:/workspace
+    ports:
+      - 8080:8080
+    links:
+      - db
+    depends_on:
+      - db
+
+
+  db:
+    build:
+      context: .
+      dockerfile: mongo.Dockerfile
+      args:
+        USER_ID: $USER_ID
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
