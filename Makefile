@@ -1,6 +1,9 @@
 venv:
 	python3.6 -m venv venv
 
+venv2:
+	virtualenv -p python3.6 venv
+
 install:
 	venv/bin/pip install -r requirements.txt
 
@@ -15,6 +18,12 @@ interpreter:
 
 teach:
 	PYTHONPATH=. venv/bin/python -m teach
+
+competition_url:
+	PYTHONPATH=. venv/bin/python -m competition_url
+
+docker_mongo:
+	USER_ID=`id -u` docker-compose up db
 
 docker_build:
 	USER_ID=`id -u` docker-compose build

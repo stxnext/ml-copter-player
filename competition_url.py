@@ -40,16 +40,16 @@ PLAYERS = [
     },
 ]
 
-PLAYERS = [
-    {
-        'name': 'RADKA DANE',
-        'address': '127.0.0.1:8081',
-    },
-    {
-        'name': 'TOMKA DANE',
-        'address': '127.0.0.1:8080',
-    }
-]
+# PLAYERS = [
+#     {
+#         'name': 'RADKA DANE',
+#         'address': '127.0.0.1:8081',
+#     },
+#     {
+#         'name': 'TOMKA DANE',
+#         'address': '127.0.0.1:8080',
+#     }
+# ]
 
 
 def make_competition_url():
@@ -68,8 +68,8 @@ def make_competition_url():
 
 def main():
     url = make_competition_url()
-    pyperclip.copy(url)
     print(url)
+    pyperclip.copy(url)
 
 
 if __name__ == '__main__':

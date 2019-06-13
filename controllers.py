@@ -25,6 +25,7 @@ async def store_sensors_data(request):
             'meta': meta,
             'data': data
         })
+    print('Sensors data stored')
 
     return web.Response(status=204, headers={
         'Access-Control-Allow-Origin': '*'

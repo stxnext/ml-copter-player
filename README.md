@@ -25,7 +25,7 @@ vehicle model.
 #### Running on local instance:
 
 * [Python 3.6](https://www.python.org/downloads/release/python-364/)
-* [mogodb](https://docs.mongodb.com/getting-started/shell/installation/)
+* [mogodb](https://docs.mongodb.com/getting-started/shell/installation/) or `make docker_mongo`
 
 
 #### Running in docker environment:
@@ -42,7 +42,7 @@ vehicle model.
         cd ./ml-copter-player
 
 1. Create python virtual environment (assuming python interpreter accessible with alias `python3.6`):
-    
+
         make venv
 
     *Sidenote: If you have installed Python 3.6 via Ubuntu package manager, then you might need to install `python3.6-venv` package firstly:*
@@ -122,24 +122,24 @@ in the db, where an example entry format is:
             "u" : false,
             "l" : false,
             "r" : true,
-            "s" : [ 
-                3, 
-                3, 
-                2, 
-                3, 
-                3, 
-                5, 
-                10, 
-                null, 
-                9, 
-                4, 
+            "s" : [
+                3,
+                3,
+                2,
+                3,
+                3,
+                5,
+                10,
+                null,
+                9,
+                4,
                 3
             ],
             "ts" : 0.282,
             "x" : 32.0022222222222
         }
     }
-    
+
 Where:
 
 * The `meta` object contains some additional parameters that may be used for filtering the data
@@ -159,7 +159,7 @@ in given moment:
         Integer value of each sensor represents the dinstance from the terrain or an obstacle.
         For example, the value of `0` means that the closest point of the sensor is touching the terrain, value `4` means that the fifth closest point is touching the terrain and so on.
         The `null` value means that none of the points of given sensor is touching the terrain.
-    
+
     ![Sensors](docs/screen_003.png#left)
 
 ### Cleaning up the database
@@ -199,7 +199,7 @@ The common flow assume the following steps:
 
 However, some of these steps are already accomplished, so you can focus on data pre-processing and choosing and tuning the algorithm.
 
-To gain necessary knowledge about ML algorithms, it's advised to familiarize yourself with [scikit-learn docummentation](scikit-learn.org/stable/supervised_learning.html) 
+To gain necessary knowledge about ML algorithms, it's advised to familiarize yourself with [scikit-learn docummentation](scikit-learn.org/stable/supervised_learning.html)
 
 
 ### Running the teaching script
@@ -240,7 +240,7 @@ For example the browser would send:
 this data is passed to the `predict` method (defined in `teach.py` module),
 which is expected to use the trained model to predict the answer in the form of
 iterable of 3 boolean-castable values (up, left, right), e.g:
-    
+
     [True, False, True]
 
 so the server would respond with json:
