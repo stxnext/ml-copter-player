@@ -3,8 +3,8 @@ import urllib.parse
 import pyperclip
 
 SERVER_HOST = 'localhost:8080'
-SEED = 123123
-LENGTH = 121
+SEED = None
+LENGTH = None
 PLAYERS = [
     {
         'name': 'Baratheon',
@@ -39,17 +39,6 @@ PLAYERS = [
         'address': '127.0.0.1:8080',
     },
 ]
-
-# PLAYERS = [
-#     {
-#         'name': 'RADKA DANE',
-#         'address': '127.0.0.1:8081',
-#     },
-#     {
-#         'name': 'TOMKA DANE',
-#         'address': '127.0.0.1:8080',
-#     }
-# ]
 
 
 def make_competition_url():
